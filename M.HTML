@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Be My Valentine?</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #ffe6e6;
+            margin: 0;
+            padding: 50px;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+            position: relative;
+        }
+        h1 {
+            color: #ff4d6d;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 18px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        .yes {
+            background-color: #ff4d6d;
+            color: white;
+        }
+        .no {
+            background-color: #ccc;
+            color: black;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        #message {
+            display: none;
+            font-size: 24px;
+            color: #ff4d6d;
+            margin-top: 20px;
+        }
+        #gif {
+            display: none;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Will you be my Valentine? 💖</h1>
+        <button class="btn yes" onclick="showMessage()">Yes</button>
+        <button class="btn no" onmouseover="moveButton(this)">No</button>
+        <div id="message">Yes!! <br> Mwah mwah! I love you my beautiful baby ❤️</div>
+        <img id="gif" src="https://i.pinimg.com/originals/6b/28/54/6b28544576b5d179e7d3d4a92841ab49.gif" alt="Cute Kiss" width="200">
+    </div>
+
+    <script>
+        function moveButton(button) {
+            let x = Math.random() * (window.innerWidth - 100);
+            let y = Math.random() * (window.innerHeight - 50);
+            button.style.left = `${x}px`;
+            button.style.top = `${y}px`;
+        }
+        
+        function showMessage() {
+            document.getElementById("message").style.display = "block";
+            document.getElementById("gif").style.display = "block";
+        }
+    </script>
+</body>
+</html>
